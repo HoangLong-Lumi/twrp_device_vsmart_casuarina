@@ -35,6 +35,9 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+    export TERMINFO /system/etc/terminfo
+    export TERM bg1.25
+
     # Always start keymaster to silence logspam
     start qseecomd
     exec u:r:recovery:s0 -- /system/bin/sleep 1s
