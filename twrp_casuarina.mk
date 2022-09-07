@@ -25,7 +25,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/vsmart/casuarina/Image.gz-dtb
+	LOCAL_KERNEL := device/vsmart/casuarina/prebuilt/Image.gz-dtb
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -43,7 +43,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_DEVICE := casuarina
 PRODUCT_NAME := twrp_casuarina
 PRODUCT_BRAND := Vsmart
-PRODUCT_MODEL := Vsmart Joy 3
+PRODUCT_MODEL := Joy 3
 PRODUCT_MANUFACTURER := Vsmart
 
 ## wrappedkey
@@ -52,10 +52,13 @@ PRODUCT_MANUFACTURER := Vsmart
 #
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.secure=1 \
+    ro.hardware.keystore=msm8953 \
+    ro.hardware.gatekeeper=msm8953
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.secure=0 \
 	ro.adb.secure=0 \
-	ro.product.device=casuarina \
-	ro.build.date.utc=1000000000
+	ro.product.device=casuarina
 
 BUILD_FINGERPRINT := vsmart/casuarina_open/casuarina:10/QKQ1.200311.002/V430A_OPN_U_B15_211112:user/release-keys
 PRODUCT_BUILD_PROP_OVERRIDES += \
