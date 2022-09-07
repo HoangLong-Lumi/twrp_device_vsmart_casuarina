@@ -20,8 +20,8 @@
 PRODUCT_RELEASE_NAME := casuarina
 
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit some common Twrp stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
@@ -41,7 +41,7 @@ PRODUCT_COPY_FILES += \
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := casuarina
-PRODUCT_NAME := omni_casuarina
+PRODUCT_NAME := twrp_casuarina
 PRODUCT_BRAND := Vsmart
 PRODUCT_MODEL := Vsmart Joy 3
 PRODUCT_MANUFACTURER := Vsmart

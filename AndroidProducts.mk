@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_casuarina.mk
+    $(LOCAL_DIR)/twrp_casuarina.mk
