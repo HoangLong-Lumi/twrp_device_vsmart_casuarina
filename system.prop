@@ -1,4 +1,1 @@
-ro.display.series=Vsmart Joy 3
-ro.product.board=msm8953
-ro.board.platform=msm8953
 vendor.gatekeeper.disable_spu=true
